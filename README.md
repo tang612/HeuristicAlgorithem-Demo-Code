@@ -17,7 +17,7 @@ This is a project for practicing heuristic algorithms.
 可视化展示求解过程和结果  
 输出详细的路径信息和性能指标  
   
-## 4. System Structure  
+## 2. System Structure  
 系统采用三层架构设计：  
 参数配置(config.py)：管理所有运行参数
 算法接口(base.py):管理算法接口
@@ -26,14 +26,14 @@ This is a project for practicing heuristic algorithms.
 算法工厂（init.py）：构建算法实例
 应用层(main.py)：处理数据输入输出和可视化  
   
-### 5 Performance Visualization 
+### 3 Performance Visualization 
 绘制适应度随代数变化曲线  
 显示关键性能指标(运行时间、最终路径长度)  
       
-## 7. Environment  
+## 4. Environment  
 Python 3.7+
 NumPy 1.19+
 Matplotlib 3.3+
 
-## 8.Project Phase 
+## 5.Project Phase 
 完成需求文档和系统设计 -> 实现遗传算法核心功能，实现结果可视化和用户接口 -> 编写用户手册和技术文档 -> 增加蚁群算法
