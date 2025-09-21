@@ -3,13 +3,11 @@ This is a project for practicing heuristic algorithms.
 
 ## 1. Project Overview  
 ### 1.1 Background
-   
 启发式算法是一些基于观察和经验构造的算法，在给定的资源下，解决一些组合优化问题，特别是NP-Hard问题，其解空间随着问题规模指数式增长，面对这种复杂度，传统的 精确算法（如动态规划、分支界限法）虽然能够保证找到全局最优解，但在大规模实例中往往因计算资源和时间的限制而无法实际应用。在此背景下，启发式算法应运而生。它通过引入问题的经验信息与搜索策略，不再盲目遍历全部解，而是利用启发性评估函数引导搜索，快速逼近较优解。
 常见的启发式算法有：遗传算法，蚁群算法，粒子群算法，模拟退火算法等。  
 旅行商问题(TSP)是组合优化领域中最著名的NP难问题之一，在物流规划、电路板设计、DNA测序等领域有广泛应用。本项目旨在开发一个基于遗传算法的TSP求解系统，能够高效找到近似最优解并提供可视化分析。  
 
 ### 1.2 Project Objectives
-  
 开发一个高效、可配置的TSP求解系统，具备以下能力：  
 适用多个启发式算法  
 处理不同规模的城市网络  
@@ -26,7 +24,7 @@ This is a project for practicing heuristic algorithms.
 算法工厂（init.py）：构建算法实例
 应用层(main.py)：处理数据输入输出和可视化  
   
-### 3 Performance Visualization 
+## 3 Performance Visualization 
 绘制适应度随代数变化曲线  
 显示关键性能指标(运行时间、最终路径长度)  
       
@@ -37,3 +35,8 @@ Matplotlib 3.3+
 
 ## 5.Project Phase 
 完成需求文档和系统设计 -> 实现遗传算法核心功能，实现结果可视化和用户接口 -> 编写用户手册和技术文档 -> 增加蚁群算法
+
+## 6. Result   
+See above 
+
+
