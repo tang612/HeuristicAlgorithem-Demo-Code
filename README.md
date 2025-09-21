@@ -11,116 +11,24 @@ This is a project for practicing heuristic algorithms.
 ### 1.2 Project Objectives
   
 开发一个高效、可配置的TSP求解系统，具备以下能力：  
-使用与多个启发式算法  
+适用多个启发式算法  
 处理不同规模的城市网络  
 提供多种参数配置选项  
 可视化展示求解过程和结果  
 输出详细的路径信息和性能指标  
   
-## 2. Functional Requirements  
-### 2.1 Core Functional Requirements  
-### 2.1.1 Data Management 
-FR-001: 系统应支持预定义城市坐标输入  
-FR-002: 系统应支持随机生成城市坐标  
-FR-003: 系统应能计算并存储城市间距离矩阵  
-  
-### 2.1.2 Algorithm implementation 
-FR-004: 系统应实现完整的遗传算法框架  
-FR-005: 算法应支持从指定城市开始路径  
-FR-006: 算法应包含选择、交叉、变异等遗传操作  
-FR-007: 算法应记录每代进化结果  
-  
-### 2.1.3 Result 
-FR-008: 系统应可视化展示最优路径  
-FR-009: 系统应绘制适应度变化曲线  
-FR-010: 系统应显示城市名称而非编号  
-FR-011: 系统应输出路径顺序和总长度  
-  
-### 2.2 Configuration
-FR-012: 系统应提供灵活的配置参数：  
-城市数量（默认：20）  
-坐标维度（默认：2）  
-种群大小（默认：100）  
-进化代数（默认：500）  
-变异概率（默认：0.2）  
-交叉概率（默认：0.8）  
-锦标赛大小（默认：5）  
-  
-## 3. Unfunctional Requirements 
-### 3.1 Performance  
-NFR-001: 应使用向量化计算优化性能  
-  
-### 3.2 Availability  
-NFR-002: 结果可视化应清晰展示路径和进化过程  
-NFR-003: 应提供详细的控制台输出  
-
-### 3.3 Maintainability  
-NFR-004: 代码应模块化设计，便于扩展和维护  
-NFR-005: 应提供完整的代码注释和文档  
-NFR-006: 应使用类型提示提高代码可读性  
-  
 ## 4. System Structure  
-### 4.1 Module   
 系统采用三层架构设计：  
-配置层(config.py)：管理所有运行参数  
-算法层(GA.py)：实现遗传算法核心逻辑  
+参数配置(config.py)：管理所有运行参数
+算法接口(base.py):管理算法接口
+遗传算法(GA.py)：实现遗传算法核心逻辑  
+蚁群算法（aco.py）:实现蚁群算法核心逻辑
+算法工厂（init.py）：构建算法实例
 应用层(main.py)：处理数据输入输出和可视化  
   
-### 4.2 Data  
-用户通过配置文件或命令行设置参数  
-系统生成或加载城市坐标数据  
-计算城市间距离矩阵  
-遗传算法执行进化过程  
-结果可视化和输出  
-  
-## 5. Design Details  
-### 5.1 GA Design  
-### 5.1.1 Individual   
-使用整数列表表示城市访问顺序  
-确保路径从指定城市(如城市0)开始  
-  
-### 5.1.2 Fitness Function  
-使用向量化计算路径总长度  
-采用欧氏距离作为城市间距离度量  
-
-### 5.1.3 Evolution  
-选择：锦标赛选择策略  
-交叉：顺序交叉(OX)操作  
-变异：交换变异操作  
-  
-### 5.2 Visualization  
-### 5.2.1 Result Visualization  
-使用折线图连接城市点  
-标注城市名称而非编号  
-突出显示起点城市  
-  
-### 5.2.2 Performance Visualization 
+### 5 Performance Visualization 
 绘制适应度随代数变化曲线  
 显示关键性能指标(运行时间、最终路径长度)  
-  
-## 6. Interface  
-### 6.1 Configuration Interface  
-
-         def get_config():  
-             """获取配置参数"""  
-   
-         def print_config(config):  
-             """打印配置参数"""  
-      
-### 6.2 Algorithm Interface  
-
-      class GeneticAlgorithm:  
-
-          def __init__(self, dist_mat, config):  
-              """初始化算法"""  
-                
-          def run(self):  
-              """运行算法"""  
-          
-### 6.3 Tool Interface  
-
-         def build_distance_matrix(points):  
-             """构建距离矩阵"""  
       
 ## 7. Environment  
 Python 3.7+
@@ -128,4 +36,4 @@ NumPy 1.19+
 Matplotlib 3.3+
 
 ## 8.Project Phase 
-完成需求文档和系统设计 -> 实现遗传算法核心功能，实现结果可视化和用户接口 -> 编写用户手册和技术文档
+完成需求文档和系统设计 -> 实现遗传算法核心功能，实现结果可视化和用户接口 -> 编写用户手册和技术文档 -> 增加蚁群算法
